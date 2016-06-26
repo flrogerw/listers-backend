@@ -1,0 +1,23 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "Lists": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "Lists",
+    "password": "",
+    "name": "Lists",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "AwsStorage": {
+    "name": "AwsStorage",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "key": "your amazon key",
+    "keyId": "your amazon key id"
+  }
+}
