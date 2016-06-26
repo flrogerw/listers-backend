@@ -1,3 +1,3 @@
 # Listers
 
-Personal Project
+Personal Project in Node/loopback
