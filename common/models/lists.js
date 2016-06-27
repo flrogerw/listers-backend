@@ -10,6 +10,8 @@ Lists.getAllByCategory = function(req, cb){
 	
 	Mongo.getAllInCategory("Flashcard", function(err, response){
 		
+		console.log("HERE: "+ response);
+		
 		cb(response);
 	});
 	
