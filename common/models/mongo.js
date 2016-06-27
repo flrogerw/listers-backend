@@ -5,7 +5,7 @@ var assert = require('assert');
 
 module.exports = function(Mongo) {
 
-	Mongo.getAll = function(listType, filters, cb) {
+	Mongo.get = function(listType, filters, cb) {
 
 		MongoClient.connect("mongodb://localhost:27017/Lists",function(err, db) {
 

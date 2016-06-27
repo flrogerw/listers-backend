@@ -41,4 +41,10 @@ module.exports = function(app) {
 		});
 	});
 	
+	app.post('/lists/get_one/:category/:list_id', function(req, res) {
+		Lists.getOneById(req, function(result) {
+			res.send(result);
+		});
+	});
+	
 	}
