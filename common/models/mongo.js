@@ -22,7 +22,6 @@ module.exports = function(Mongo) {
 						      }
 						 });
 							db.close();
-						}
 					} else {
 						console.log("MONGO ERROR: " + err);
 						cb(true, err);
