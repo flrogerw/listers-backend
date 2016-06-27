@@ -14,13 +14,14 @@ Mongo.getAllInCategory = function(listType, cb){
 			
 			var collection = db.collection(listType);
 			collection.find({}, function(err, response) {
-				console.log(response);
-				db.close();
+				console.log(JSON.stringify(response));
+				
 				if(err){
 					cb({error: true, errorMessage: "Could not get Collection"});
 				}else{
 					cb({error: false, collection: response});
 				}
+				db.close();
 			});
 		}else{
 			console.log("ERROR: "+err);
