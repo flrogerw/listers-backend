@@ -17,6 +17,14 @@
     "dataSource": null,
     "public": false
   },
+  "lists": {
+    "dataSource": null,
+    "public": false
+  },
+  "mongo": {
+    "dataSource": null,
+    "public": false
+  },
   "AwsStorage": {
     "dataSource": "AwsStorage",
     "public": true
