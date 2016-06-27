@@ -40,6 +40,10 @@
       ]
     }
   },
+  "parse": {
+    "body-parser#json": {},
+    "body-parser#urlencoded": {"params": { "extended": true }}
+  },
   "files": {},
   "final": {
     "loopback#urlNotFound": {}
