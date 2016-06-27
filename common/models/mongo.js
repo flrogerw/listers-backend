@@ -18,7 +18,7 @@ Mongo.getAllInCategory = function(listType, cb){
 				if(err){
 					cb({error: true, errorMessage: "Could not get Collection"});
 				}else{
-					console.log(response);
+					console.log("RESPONSE: "+response);
 					cb({error: false, collection: response});
 				}
 				db.close();
