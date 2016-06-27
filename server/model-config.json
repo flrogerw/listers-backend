@@ -19,7 +19,7 @@
   },
   "lists": {
     "dataSource": null,
-    "public": false
+    "public": true
   },
   "mongo": {
     "dataSource": null,
