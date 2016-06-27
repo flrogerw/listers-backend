@@ -1,6 +1,7 @@
 var app = require("../../server/server");
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
+var assert = require('assert');
 
 module.exports = function(Mongo) {
 
