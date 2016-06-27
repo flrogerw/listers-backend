@@ -6,7 +6,7 @@
 
 module.exports = function(app) {
 	
-	
+	var Token = app.models.Token;
 	/***** TOKEN ********/
 	
 	app.all(['/users','/users/*'], function(req, res, next){
