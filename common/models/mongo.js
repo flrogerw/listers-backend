@@ -19,10 +19,11 @@ module.exports = function(Mongo) {
 						      if (doc != null) {
 						    	  response.push(doc);
 						      } else {
+						    	 db.close();
 						         cb(false, response);
 						      }
 						 });
-							db.close();
+							
 					} else {
 						console.log("MONGO ERROR: " + err);
 						cb(true, err);
