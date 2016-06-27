@@ -18,7 +18,7 @@ Mongo.getAllInCategory = function(listType, cb){
 				if(err){
 					cb(true, err);
 				}else{
-					cb(false, response});
+					cb(false, response);
 				}
 				db.close();
 			});
