@@ -7,7 +7,7 @@ module.exports = function(Mongo) {
 	
 	
 Mongo.getAllInCategory = function(collection, cb){
-	
+	/*
 	MongoClient.connect("mongodb://localhost:27017/Lists", function(err, db) {
 		if (!err) {
 			var collection = db.collection(collection);
@@ -23,7 +23,8 @@ Mongo.getAllInCategory = function(collection, cb){
 			console.log("ERROR: "+err);
 			cb({error: true, errorMessage: "Could not get Collection"});
 		}
-	});	
+	});
+	*/	
 };	
 	
 
