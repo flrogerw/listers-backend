@@ -9,26 +9,26 @@ module.exports = function(Mongo) {
 
 		MongoClient.connect("mongodb://localhost:27017/Lists",function(err, db) {
 
-					if (!err) {
-						var response = [];
-						var cursor =db.collection(listType).find( filters );
-						
-						 cursor.each(function(err, doc) {
-						      assert.equal(err, null);
-						      
-						      if (doc != null) {
-						    	  response.push(doc);
-						      } else {
-						    	 db.close();
-						         cb(false, response);
-						      }
-						 });
-							
-					} else {
-						console.log("MONGO ERROR: " + err);
-						cb(true, err);
-					}
-				});
+			if (!err) {
+				var response = [];
+				var cursor =db.collection(listType).find( filters );
+				
+				 cursor.each(function(err, doc) {
+				      assert.equal(err, null);
+				      
+				      if (doc != null) {
+				    	  response.push(doc);
+				      } else {
+				    	 db.close();
+				         cb(false, response);
+				      }
+				 });
+					
+			} else {
+				console.log("MONGO ERROR: " + err);
+				cb(true, err);
+			}
+		});
 	};
 
 }

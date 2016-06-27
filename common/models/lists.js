@@ -9,11 +9,11 @@ Lists.getAllByCategory = function(req, cb){
 	
 	var Mongo = app.models.Mongo;
 	
-	Mongo.getAll("Flashcard", {}, function(err, response){
+	Mongo.getAll(req.params.category, {}, function(err, response){
 		
-		console.log("HERE: "+ response);
+	
 		
-		cb(response);
+		cb({"error":err, "response": response});
 	});
 	
 };
