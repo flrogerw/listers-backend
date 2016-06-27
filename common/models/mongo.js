@@ -16,15 +16,15 @@ Mongo.getAllInCategory = function(listType, cb){
 			collection.findOne({"_id" : new ObjectID("5770b897196e7978fc0cb185")},function(err, response) {
 				
 				if(err){
-					cb({error: true, errorMessage: "Could not get Collection"});
+					cb(true, err);
 				}else{
-					cb({error: false, collection: response});
+					cb(false, response});
 				}
 				db.close();
 			});
 		}else{
-			console.log("ERROR: "+err);
-			cb({error: true, errorMessage: "Could not get Collection"});
+			console.log("MONGO ERROR: "+err);
+			cb(true, err);
 		}
 	});	
 };	
