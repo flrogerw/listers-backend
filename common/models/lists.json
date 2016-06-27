@@ -1,6 +1,6 @@
 {
-  "name": "Lists",
-  "plural": "Lists",
+  "name": "lists",
+  "plural": "lists",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

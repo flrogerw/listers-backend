@@ -1,6 +1,6 @@
 {
-  "name": "Mongo",
-  "plural": "Mongo",
+  "name": "mongo",
+  "plural": "mongo",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
