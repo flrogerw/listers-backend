@@ -4,21 +4,23 @@ var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function(Mongo) {
 
-	Mongo.getAllInCategory = function(listType, cb) {
+	Mongo.getAll = function(listType, filters, cb) {
 
-		MongoClient.connect("mongodb://localhost:27017/Lists",
-				function(err, db) {
+		MongoClient.connect("mongodb://localhost:27017/Lists",function(err, db) {
 
 					if (!err) {
-
-						var collection = db.collection(listType);
-						collection.findOne({}, function(err, response) {
-
-							if (err) {
-								cb(true, err);
-							} else {
-								cb(false, response);
-							}
+						var response = [];
+						var cursor =db.collection(listType).find( filters );
+						
+						 cursor.each(function(err, doc) {
+						      assert.equal(err, null);
+						      
+						      if (doc != null) {
+						    	  response.push(doc);
+						      } else {
+						         cb(false, response);
+						      }
+						 }
 							db.close();
 						});
 					} else {
