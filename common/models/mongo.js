@@ -6,11 +6,11 @@ module.exports = function(Mongo) {
 	
 	
 	
-Mongo.getAllInCategory = function(collection, cb){
+Mongo.getAllInCategory = function(listType, cb){
 	
 	MongoClient.connect("mongodb://localhost:27017/Lists", function(err, db) {
 		if (!err) {
-			var collection = db.collection(collection);
+			var collection = db.collection(listType);
 			collection.find({}, function(err, response) {
 				db.close();
 				if(err){
