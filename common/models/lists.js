@@ -8,7 +8,7 @@ Lists.getAllByCategory = function(req, cb){
 	
 	var Mongo = app.models.Mongo;
 	
-	Mongo.getAllInCategory("Flashcard", function(err, response){
+	Mongo.getAll("Flashcard", {}, function(err, response){
 		
 		console.log("HERE: "+ response);
 		
