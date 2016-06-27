@@ -1,9 +1,9 @@
 var app = require("../../server/server");
-var Mongo = app.models.Mongo;
+
 
 module.exports = function(Lists) {
 	
-	
+	var Mongo = app.models.Mongo;	
 	
 Lists.getAllByCategory = function(req, cb){
 	
