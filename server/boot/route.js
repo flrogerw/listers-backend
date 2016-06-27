@@ -70,8 +70,8 @@ module.exports = function(app) {
 	 *       "errorMessage": "The id of the User was not found."
 	 *     }
 	 */	
-	app.get('/users', function(req, res) {
-		User.getUser(req, function(result) {
+	app.get('/lists/get_all_category', function(req, res) {
+		Lists.getAllByCategory(req, function(result) {
 			res.send(result);
 		});
 	});

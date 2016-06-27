@@ -4,24 +4,27 @@ var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function(Mongo) {
 	
-MongoClient.connect("mongodb://localhost:27017/Lists", function(err, db) {
+	
+	
+Mongo.getAllInCategory = function(collection, cb){
+	
+	MongoClient.connect("mongodb://localhost:27017/Lists", function(err, db) {
 		if (!err) {
-			var collection = db.collection('Orders');
-			collection.findOne({
-				"_id" : new ObjectID(orderId)
-			}, function(err, item) {
-
-				var order_string = JSON.parse(item.order_string);
-
-				for (i in order_string.images) {
-
-					convertImage(order_string.images[i]);
-				}
-
+			var collection = db.collection(collection);
+			collection.find({}, function(err, response) {
 				db.close();
+				if(err){
+					cb({error: true, errorMessage: "Could not get Collection"});
+				}else{
+					cb({error: false, collection: response);
+				}
 			});
 		}else{
-			console.log(err);
+			console.log("ERROR: "+err);
+			cb({error: true, errorMessage: "Could not get Collection"});
 		}
-	});
+	});	
+};	
+	
+
 }
