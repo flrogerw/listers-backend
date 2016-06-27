@@ -10,6 +10,8 @@ Mongo.getAllInCategory = function(listType, cb){
 	
 	MongoClient.connect("mongodb://localhost:27017/Lists", function(err, db) {
 		if (!err) {
+			
+			console.log(err);
 			var collection = db.collection(listType);
 			collection.find({}, function(err, response) {
 				db.close();
