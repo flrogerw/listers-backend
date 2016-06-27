@@ -35,7 +35,7 @@ module.exports = function(app) {
 	});
 	*/
 	
-	app.get('/lists/get_all/:category', function(req, res) {
+	app.post('/lists/get_all/:category', function(req, res) {
 		Lists.getAllByCategory(req, function(result) {
 			res.send(result);
 		});
