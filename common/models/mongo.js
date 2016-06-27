@@ -20,9 +20,9 @@ module.exports = function(Mongo) {
 						      } else {
 						         cb(false, response);
 						      }
-						 }
+						 });
 							db.close();
-						});
+						}
 					} else {
 						console.log("MONGO ERROR: " + err);
 						cb(true, err);
