@@ -12,7 +12,7 @@ module.exports = function(Mongo) {
 					if (!err) {
 
 						var collection = db.collection(listType);
-						collection.find({}, function(err, response) {
+						collection.find( function(err, response) {
 
 							if (err) {
 								cb(true, err);
