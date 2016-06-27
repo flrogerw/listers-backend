@@ -13,7 +13,7 @@ Mongo.getAllInCategory = function(listType, cb){
 			
 			
 			var collection = db.collection(listType);
-			collection.findOne({"_id" : new ObjectID('12345')},function(err, response) {
+			collection.findOne({"_id" : new ObjectID("12ASDe345")},function(err, response) {
 				
 				if(err){
 					cb({error: true, errorMessage: "Could not get Collection"});
