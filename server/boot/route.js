@@ -35,6 +35,12 @@ module.exports = function(app) {
 	});
 	*/
 	
+	app.post('/lists/post/datum', function(req, res) {
+		Lists.insertDatum(req, function(result) {
+			res.send(result);
+		});
+	})
+	
 	app.post('/lists/get_all/:category', function(req, res) {
 		Lists.getAllByCategory(req, function(result) {
 			res.send(result);

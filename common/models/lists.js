@@ -26,5 +26,17 @@ module.exports = function(Lists) {
 			});
 		});
 	};
+	
+	Lists.insertDatum = function(req, cb) {
+
+		var Mongo = app.models.Mongo;	
+		Mongo.insert('datums', req.body, function(err, response) {
+
+			cb({
+				"error" : err,
+				"response" : response
+			});
+		});
+	};
 
 }

@@ -7,7 +7,7 @@ module.exports = function(Mongo) {
 
 	Mongo.get = function(listType, filters, cb) {
 
-		MongoClient.connect("mongodb://localhost:27017/Lists",function(err, db) {
+		MongoClient.connect("mongodb://localhost:27017/TenSteps",function(err, db) {
 
 			if (!err) {
 				var response = [];
@@ -23,6 +23,22 @@ module.exports = function(Mongo) {
 				         cb(false, response);
 				      }
 				 });
+					
+			} else {
+				console.log("MONGO ERROR: " + err);
+				cb(true, err);
+			}
+		});
+	};
+	
+	Mongo.insert = function(collection, document, cb) {
+
+		MongoClient.connect("mongodb://localhost:27017/TenSteps",function(err, db) {
+
+			if (!err) {
+				db.collection(collection).insert(document, function(err, records){
+					cb(false, records[0]._id)
+					});
 					
 			} else {
 				console.log("MONGO ERROR: " + err);
