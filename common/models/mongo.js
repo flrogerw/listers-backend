@@ -11,7 +11,7 @@ module.exports = function(Mongo) {
 
 			if (!err) {
 				var response = [];
-				var cursor =db.collection(listType).find( {meta.isPublic: true}, {meta:1} );
+				var cursor =db.collection(listType).find( {'meta'.'isPublic': true}, {'meta':1} );
 				
 				 cursor.each(function(err, doc) {
 				      assert.equal(err, null);
