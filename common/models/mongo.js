@@ -11,7 +11,7 @@ module.exports = function(Mongo) {
 
 			if (!err) {
 				var response = [];
-				var cursor =db.collection(listType).find();
+				var cursor =db.collection(listType).find(...filters);
 				
 				 cursor.each(function(err, doc) {
 				      assert.equal(err, null);

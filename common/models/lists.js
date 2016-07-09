@@ -6,7 +6,7 @@ module.exports = function(Lists) {
 	Lists.getAllByCategory = function(req, cb) {
 
 		var Mongo = app.models.Mongo;
-		Mongo.get('datums', req.body, function(err, response) {
+		Mongo.get('datums', [req.body,{"meta":"1"}], function(err, response) {
 
 			cb({
 				"error" : err,
