@@ -41,13 +41,13 @@ module.exports = function(app) {
 		});
 	})
 	
-	app.post('/lists/get_all/:category', function(req, res) {
+	app.post('/lists/get_all/', function(req, res) {
 		Lists.getAllByCategory(req, function(result) {
 			res.send(result);
 		});
 	});
 	
-	app.post('/lists/get_one/:category/:list_id', function(req, res) {
+	app.post('/lists/get_one/:list_id', function(req, res) {
 		Lists.getOneById(req, function(result) {
 			res.send(result);
 		});
