@@ -18,7 +18,7 @@ module.exports = function(Lists) {
 	Lists.getOneById = function(req, cb) {
 
 		var Mongo = app.models.Mongo;	
-		Mongo.get('datums', {"_id" : new ObjectID(req.params.list_id)}, function(err, response) {
+		Mongo.get('datums', [{"_id" : new ObjectID(req.params.list_id)}], function(err, response) {
 
 			cb({
 				"error" : err,
